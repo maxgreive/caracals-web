@@ -3,22 +3,30 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `caracals-web`,
+    siteUrl: `https://www.caracals.de`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-transformer-remark", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/"
+      },
+      __key: "images"
+    }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "pages",
+        "path": "./src/pages/"
+      },
+      __key: "pages"
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
-    },
-    __key: "pages"
-  }]
+    `gatsby-plugin-postcss`
+  ]
 };
