@@ -1,0 +1,21 @@
+---
+import MainLayout from "./MainLayout.astro";
+import ProjectHeader from "../components/ProjectHeader.astro";
+import Introduction from "../components/Introduction.astro";
+import Overview from "../components/Overview.astro";
+import Approach from "../components/Approach.astro";
+import Result from "../components/Result.astro";
+import NextTeam from "../components/NextTeam.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/css/custom.css";
+const {frontmatter} = Astro.props;
+---
+<MainLayout>
+    <ProjectHeader frontmatter={frontmatter} />
+    <Introduction />
+    <Overview />
+    <Approach />
+    <Result />
+    <NextTeam frontmatter={frontmatter} />
+    <Footer containerClasses={["z-10", "pt-8"]} />
+</MainLayout>

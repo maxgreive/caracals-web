@@ -1,0 +1,8 @@
+---
+import MainLayout from "./MainLayout.astro";
+import Footer from "../components/Footer.astro";
+---
+<MainLayout>
+    <slot />
+    <Footer containerClasses={["pt-32", "backdrop-opacity-0"]} />
+</MainLayout>

@@ -1,8 +1,9 @@
 ---
 const year = new Date().getFullYear();
+const containerClasses = Astro.props.containerClasses;
 ---
 
-<footer class="relative bg-black pt-32 backdrop-opacity-0">
+<footer class:list={["relative", "bg-black", ...containerClasses]}>
   <div class="mx-auto max-w-7xl px-6 pb-12 lg:px-12 xl:px-6 2xl:px-0">
       <div>
           <div class="flex flex-wrap items-center gap-6">
@@ -31,24 +32,25 @@ const year = new Date().getFullYear();
       <div class="mt-12 md:mt-16 lg:mt-24">
           <div class="space-y-8 md:space-y-12">
               <a href="/" class="text-2xl font-light tracking-widest text-white">
+                  <span class="sr-only">Caracals Logo</span>
                   <img class="h-8 w-auto brightness-200" src="/favicon.svg" alt="logo mark" width="100" height="100" />
               </a>
               <nav>
                   <ul class="flex flex-wrap gap-6 text-sm uppercase tracking-wider text-white">
                       <li>
-                          <a href="#home">Home</a>
+                          <a href="/">Home</a>
                       </li>
                       <li>
-                          <a href="#teams">Teams</a>
+                          <a href="/#teams">Teams</a>
                       </li>
                       <li>
-                          <a href="#training">Training</a>
+                          <a href="/#training">Training</a>
                       </li>
                       <li>
-                          <a class="block w-max" href="#about">About us</a>
+                          <a class="block w-max" href=/"#about">About us</a>
                       </li>
                       <li>
-                          <a href="#contact">Contact</a>
+                          <a href="/#contact">Contact</a>
                       </li>
                   </ul>
               </nav>
