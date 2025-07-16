@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TeamLayout.astro
-title: Caracals Masters
+title: Caracals Mixed
 nextTeam:
     handle: open
     title: Caracals Open
