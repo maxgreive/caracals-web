@@ -1,11 +1,14 @@
+---
+const { frontmatter } = Astro.props;
+---
 <section id="overview" class="relative z-10 bg-black pb-20 lg:pt-20">
     <div class="xl:px-6">
         <div class="grid grid-cols-2 gap-3 md:gap-6">
             <div class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                <img class="transition duration-500" src="/images/gild-jump.webp" alt="person jumping" width="1380" height="1380" />
+                <img class="transition duration-500" src={frontmatter?.gallery?.[0].image} alt={frontmatter?.gallery?.[0].caption} width="1380" height="1380" />
             </div>
             <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" class="rellax relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                <img class="h-full w-full object-cover transition duration-500" src="/images/gild-legs.webp" alt="project cover" width="2000" height="1333" />
+                <img class="h-full w-full object-cover transition duration-500" src={frontmatter?.gallery?.[1]?.image} alt={frontmatter?.gallery?.[1]?.caption} width="2000" height="1333" />
             </div>
         </div>
     </div>
