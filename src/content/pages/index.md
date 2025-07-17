@@ -1,6 +1,6 @@
 ---
 title: Legal, illegal, Caracal
-heroImage: /src/assets/images/hero.jpg
+heroImage: hero.jpg
 intro: Your friendly wild cats from the Wupper Valley. Throwing knives and hammers since 2008, come and join the fun!
 teams:
   - name: Caracals Open
