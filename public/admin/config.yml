@@ -6,6 +6,7 @@ media_folder: src/assets/images
 public_folder: /images
 site_url: https://caracals.de
 locale: de
+logo_url: /images/admin-logo.svg
 
 collections:
   - name: team
