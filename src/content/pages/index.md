@@ -5,19 +5,19 @@ intro: Your friendly wild cats from the Wupper Valley. Throwing knives and hamme
 teams:
   - name: Caracals Open
     handle: open
-    image: /src/assets/images/team-open.jpg
+    image: team-open.jpg
   - name: Caramba Juniors
     handle: caramba
-    image: /src/assets/images/team-caramba.jpg
+    image: team-caramba.jpg
   - name: CaraGals Women
     handle: caragals
-    image: /src/assets/images/team-caragals.jpg
+    image: team-caragals.jpg
   - name: Caracals Mixed
     handle: mixed
-    image: /src/assets/images/team-mixed.jpg
+    image: team-mixed.jpg
 about:
   title: About us
-  image: /src/assets/images/about-us.jpg
+  image: about-us.jpg
   text: Minima iure saepe necessitatibus ipsa voluptatibus, minus voluptatem in facere maxime quae repellendus nisi inventore libero impedit eligendi, accusantium consequuntur consectetur quidem?
 links:
   - label: Instagram

@@ -1,12 +1,16 @@
 ---
+import { getImageFromFrontmatter } from "../utils/getImage";
 const { frontmatter, containerClasses } = Astro.props;
-
+const galleryImages = frontmatter.gallery.map(image => ({
+  ...image,
+  image: getImageFromFrontmatter(image.image)
+}));
 ---
 <section id="result" class:list={["relative", "z-10", "bg-black", "pb-20", "md:top-0", "lg:pt-20", ...containerClasses]}>
     <div class="space-y-3 md:space-y-6 xl:px-6">
         {
-            frontmatter.gallery && frontmatter.gallery[2] &&
-            <img src={ frontmatter.gallery?.[2]?.image } alt={frontmatter.gallery?.[2]?.caption } width="2000" height="1334" />
+            galleryImages && galleryImages[2] &&
+            <img src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width="2000" height="1334" />
         }
         <div class="relative">
             <div class="absolute inset-0 z-10 m-auto hidden lg:h-max lg:w-max lg:-translate-y-56 xl:block">

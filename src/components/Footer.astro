@@ -1,12 +1,18 @@
 ---
 import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
+import { getImageFromFrontmatter } from "../utils/getImage.ts";
 import favicon from "/public/favicon.svg";
 
 const year = new Date().getFullYear();
 const { containerClasses } = Astro.props;
-const data = await getEntry("data", "footer")
-const frontmatter = data.data
+const data = await getEntry("data", "footer");
+const frontmatter = data.data;
+
+const instagramPosts = frontmatter.instagram.map(post => ({
+  ...post,
+  image: getImageFromFrontmatter(post.image)
+}));
 ---
 
 <footer class:list={["relative", "bg-black", ...containerClasses]}>
@@ -17,7 +23,7 @@ const frontmatter = data.data
               <a href="https://instagram.com/caracals.wup" target="_blank" class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">@caracals.wup</a>
           </div>
           <div class="mt-12 grid grid-cols-2 md:grid-cols-4 md:mt-16 lg:mt-24">
-            {frontmatter?.instagram?.map(item => (
+            {instagramPosts?.map(item => (
                 <a href={item.url} target="_blank" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
                     <span class="sr-only">{item?.title}</span>
                     <Image class="transition duration-500" src={item.image} layout="constrained" alt={item?.title} width="1333" height="1333" />

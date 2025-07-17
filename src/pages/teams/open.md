@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeamLayout.astro
 title: Caracals Open
-featuredImage: /src/assets/images/team-open.jpg
+featuredImage: team-open.jpg
 introduction:
     intro-title: Lorem ipsum
     intro-text: >
