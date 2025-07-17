@@ -9,14 +9,15 @@ const featuredImage = frontmatter.featuredImage ? getImageFromFrontmatter(frontm
     {featuredImage && (
         <Picture
             src={ featuredImage }
-            alt="project cover"
+            alt={ frontmatter.title || "Caracals Wuppertal" }
             layout="constrained"
-            width="2000"
-            height="1333"
+            width="1500"
+            position="top"
+            height="750"
             data-rellax-speed="3"
             data-rellax-xs-speed="2"
             data-rellax-mobile-speed="2"
-            class="rellax absolute inset-0 h-full w-full object-cover object-top"
+            class="rellax absolute inset-0 h-full w-full object-cover"
         />
     )}
     <div class="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-12 xl:px-6 2xl:px-0">
