@@ -19,8 +19,8 @@ const frontmatter = data.data
           <div class="mt-12 grid grid-cols-2 md:grid-cols-4 md:mt-16 lg:mt-24">
             {frontmatter?.instagram?.map(item => (
                 <a href={item.url} target="_blank" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                    <span class="sr-only">Instagram feed</span>
-                    <Image class="transition duration-500" src={item.image} layout="constrained" alt="insta feed cover" width="1333" height="1333" />
+                    <span class="sr-only">{item?.title}</span>
+                    <Image class="transition duration-500" src={item.image} layout="constrained" alt={item?.title} width="1333" height="1333" />
                 </a>
             ))}
           </div>

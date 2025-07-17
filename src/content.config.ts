@@ -25,6 +25,7 @@ const pages = defineCollection({
 const data = defineCollection({
   schema: z.object({
     instagram: z.array(z.object({
+      title: z.string().optional(),
       url: z.string().url(),
       image: z.string(),
     })).optional(),
