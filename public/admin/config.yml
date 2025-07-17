@@ -2,12 +2,14 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: src/assets/images
+public_folder: /images
+site_url: https://caracals.de
+locale: de
 
 collections:
-  - name: "teams"
-    label: "Teams"
+  - name: "team"
+    label: "Team"
     folder: "src/pages/teams"
     create: true
     fields:
@@ -25,8 +27,8 @@ collections:
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Caption", name: "caption", widget: "string" }
-  - name: "pages"
-    label: "Pages"
+  - name: "page"
+    label: "Page"
     folder: "src/pages"
     create: true
     fields:

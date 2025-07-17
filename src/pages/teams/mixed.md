@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeamLayout.astro
 title: Caracals Mixed
-featuredImage: /images/team-mixed.jpg
+featuredImage: /src/assets/images/team-mixed.jpg
 introduction:
     intro-title: Lorem ipsum
     intro-text: >

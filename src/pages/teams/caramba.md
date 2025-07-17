@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeamLayout.astro
 title: Caramba Juniors
-featuredImage: /images/team-caramba.jpg
+featuredImage: /src/assets/images/team-caramba.jpg
 introduction:
     intro-title: Lorem ipsum
     intro-text: >
