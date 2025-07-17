@@ -7,7 +7,6 @@ const teams = frontmatter.teams.map(team => ({
   ...team,
   image: getImageFromFrontmatter(team.image)
 }));
-console.log('teams:', teams)
 ---
 <section id="teams" class="relative z-10 bg-black lg:pt-0">
   <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-96 2xl:px-0">

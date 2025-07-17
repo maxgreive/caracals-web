@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getImageFromFrontmatter } from "../utils/getImage";
 const { frontmatter, containerClasses } = Astro.props;
 const galleryImages = frontmatter.gallery.map(image => ({
@@ -10,7 +11,7 @@ const galleryImages = frontmatter.gallery.map(image => ({
     <div class="space-y-3 md:space-y-6 xl:px-6">
         {
             galleryImages && galleryImages[2] &&
-            <img src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width="2000" height="1334" />
+            <Image src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width="2000" height="1334" layout="constrained" loading="lazy" />
         }
         <div class="relative">
             <div class="absolute inset-0 z-10 m-auto hidden lg:h-max lg:w-max lg:-translate-y-56 xl:block">
@@ -27,7 +28,7 @@ const galleryImages = frontmatter.gallery.map(image => ({
                     </div>
                 </div>
             </div>
-            <img class="h-full w-full object-cover" src="/images/gild-cover3.webp" alt="cover" width="1800" height="1200" />
+            <Image class="h-full w-full object-cover" src="/images/gild-cover3.webp" alt="cover" width="1800" height="1200" />
         </div>
     </div>
 </section>
