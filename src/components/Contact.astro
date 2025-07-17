@@ -1,3 +1,6 @@
+---
+const { frontmatter } = Astro.props;
+---
 <section id="contact" class="relative z-10 bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
   <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
     <div class="flex flex-wrap items-center gap-6">
@@ -33,7 +36,7 @@
             <p class="mt-4 text-white">SSV Germania 1900 e.V.<br />Postfach 160104<br />42342 Wuppertal</p>
           </div>
           <div class="mt-16">
-            <h3 class="text-xs font-light uppercase tracking-widest text-white">Contact</h3>
+            <h3 class="text-xs font-light uppercase tracking-widest text-white">Kontakt</h3>
             <ul class="relative z-20 mt-4 space-y-2 font-light text-white">
               <li>
                 <a href="mailto:hello@caracals.de">E-Mail ------- hello@caracals.de</a>
@@ -41,17 +44,13 @@
             </ul>
           </div>
           <div class="mt-16">
-            <h3 class="text-xs font-light uppercase tracking-widest text-white">Follow us</h3>
+            <h3 class="text-xs font-light uppercase tracking-widest text-white">Check this</h3>
             <ul class="relative z-20 mt-4 space-y-2 font-light text-white">
-              <li>
-                <a href="https://instagram.com/caracals.wup" target="_blank">001 ------ Instagram</a>
-              </li>
-              <li>
-                <a href="https://ssv-germania1900.de" target="_blank">002 ------ SSV Germania</a>
-              </li>
-              <li>
-                <a href="https://proton-stroje.pl/de/produktkategorie/caracals-wuppertal/" target="_blank">003 ------ Shop</a>
-              </li>
+              {frontmatter.links.map((link, i) => (
+                <li>
+                  <a href={link.url} target="_blank">{(i + 1).toString().padStart(3, "0")} ------ {link.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

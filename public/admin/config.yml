@@ -8,30 +8,56 @@ site_url: https://caracals.de
 locale: de
 
 collections:
-  - name: "team"
-    label: "Team"
-    folder: "src/pages/teams"
+  - name: team
+    label: Team
+    folder: src/pages/teams
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "featuredImage", widget: "image" }
-      - label: "Introduction"
-        name: "introduction"
-        widget: "object"
+      - { label: Title, name: title, widget: string }
+      - { label: Image, name: featuredImage, widget: image }
+      - label: Introduction
+        name: introduction
+        widget: object
         fields:
-          - { label: "Title", name: "intro-title", widget: "string" }
-          - { label: "Text", name: "intro-text", widget: "markdown" }
-      - label: "Gallery"
-        name: "gallery"
-        widget: "list"
+          - { label: Title, name: intro-title, widget: string }
+          - { label: Text, name: intro-text, widget: markdown }
+      - label: Gallery
+        name: gallery
+        widget: list
         fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Caption", name: "caption", widget: "string" }
-  - name: "page"
-    label: "Page"
-    folder: "src/pages"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Content", name: "body", widget: "markdown" }
+          - { label: Image, name: image, widget: image }
+          - { label: Caption, name: caption, widget: string }
+  - name: page
+    label: Page
+    files:
+      - label: Training
+        file: src/pages/training.md
+        name: training
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Slug, name: slug, widget: string }
+          - { label: Content, name: body, widget: markdown }
+  - name: content
+    label: Content
+    files:
+    - label: Home
+      file: src/content/pages/index.md
+      name: index
+      fields:
+        - { label: Title, name: title, widget: string }
+        - { label: Hero Image, name: heroImage, widget: image }
+        - { label: Intro, name: intro, widget: markdown }
+        - label: Links
+          name: links
+          widget: list
+          fields:
+            - { label: Title, name: title, widget: string }
+            - { label: URL, name: url, widget: string }
+    - label: Footer
+      file: src/content/data/footer.md
+      name: footer
+      fields:
+        - label: Instagram Posts
+          name: instagram
+          widget: list
+          fields: [{ label: Image, name: image, widget: image }, { label: URL, name: url, widget: string }]
