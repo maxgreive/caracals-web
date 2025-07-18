@@ -1,5 +1,5 @@
 ---
-title: Caracals Wuppertal — Ultimate Frisbee
+title: Caracals Wuppertal <br>— Ultimate Frisbee
 heroImage: /images/2150-korr.jpg
 intro: Your friendly wild cats from the Wupper Valley. Throwing knives and
   hammers since 2008, come and join the fun!
