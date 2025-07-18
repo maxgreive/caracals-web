@@ -48,6 +48,14 @@ collections:
         - { label: Title, name: title, widget: string }
         - { label: Hero Image, name: heroImage, widget: image }
         - { label: Intro, name: intro, widget: markdown }
+        - label: Teams
+          name: teams
+          widget: list
+          identifier_field: name
+          fields:
+            - { label: Title, name: name, widget: string }
+            - { label: URL-Handle, name: handle, widget: string }
+            - { label: Image, name: image, widget: image }
         - label: Links
           name: links
           widget: list
