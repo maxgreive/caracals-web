@@ -1,7 +1,8 @@
 ---
-title: Legal, illegal, Caracal
-heroImage: hero.jpg
-intro: Your friendly wild cats from the Wupper Valley. Throwing knives and hammers since 2008, come and join the fun!
+title: Caracals Wuppertal — Ultimate Frisbee
+heroImage: /images/2150-korr.jpg
+intro: Your friendly wild cats from the Wupper Valley. Throwing knives and
+  hammers since 2008, come and join the fun!
 teams:
   - name: Caracals Open
     handle: open
@@ -18,7 +19,9 @@ teams:
 about:
   title: About us
   image: about-us.jpg
-  text: Minima iure saepe necessitatibus ipsa voluptatibus, minus voluptatem in facere maxime quae repellendus nisi inventore libero impedit eligendi, accusantium consequuntur consectetur quidem?
+  text: Minima iure saepe necessitatibus ipsa voluptatibus, minus voluptatem in
+    facere maxime quae repellendus nisi inventore libero impedit eligendi,
+    accusantium consequuntur consectetur quidem?
 links:
   - label: Instagram
     url: https://www.instagram.com/caracals.wup/
