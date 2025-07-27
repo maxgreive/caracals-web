@@ -1,8 +1,8 @@
 ---
 title: Caracals Wuppertal — Ultimate Frisbee
 heroImage: /images/2150-korr.jpg
-intro: Your friendly wild cats from the Wupper Valley. Throwing knives and
-  hammers since 2008, come and join the fun!
+intro: "Ein Team wie kein anderes: Die Caracals Wuppertal liefern feinsten
+  Scheibensport und energische Leidenschaft seit 2008."
 teams:
   - name: Caracals Open
     handle: open
