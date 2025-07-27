@@ -15,7 +15,7 @@ teams:
     image: team-caragals.jpg
   - name: Caracals Mixed
     handle: mixed
-    image: team-mixed.jpg
+    image: /images/2245-korr2.jpg
 about:
   title: About us
   image: about-us.jpg
