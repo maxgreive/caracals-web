@@ -6,7 +6,7 @@ intro: "Ein Team wie kein anderes: Die Caracals Wuppertal liefern feinsten
 teams:
   - name: Caracals Open
     handle: open
-    image: team-open.jpg
+    image: /images/2193-korr-v1.jpg
   - name: Caramba Juniors
     handle: caramba
     image: team-caramba.jpg
