@@ -9,7 +9,7 @@ teams:
     image: /images/2193-korr-v1.jpg
   - name: Caramba Juniors
     handle: caramba
-    image: team-caramba.jpg
+    image: /images/2442-korr-v1.jpg
   - name: CaraGals Women
     handle: caragals
     image: team-caragals.jpg
