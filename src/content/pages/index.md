@@ -12,7 +12,7 @@ teams:
     image: /images/2442-korr-v1.jpg
   - name: CaraGals Women
     handle: caragals
-    image: team-caragals.jpg
+    image: /images/2717-korr-v1.jpg
   - name: Caracals Mixed
     handle: mixed
     image: /images/2245-korr2.jpg
