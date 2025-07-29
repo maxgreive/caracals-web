@@ -16,7 +16,7 @@ gallery:
     caption: Jump
   - image: /images/bildschirmfoto-2025-07-29-um-18.39.25.png
     caption: Jump
-  - image: /images/whatsapp-image-2025-07-19-at-14.27.27.jpeg
+  - image: /images/cbbe7ef0-9f61-4d13-bcc5-4a3ee2180680.jpg
     caption: Jump
 main:
   title: Our approach
