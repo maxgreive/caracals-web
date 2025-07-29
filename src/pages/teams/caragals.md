@@ -16,7 +16,7 @@ gallery:
     caption: Jump
   - image: gild-jump.webp
     caption: Jump
-  - image: gild-jump.webp
+  - image: /images/whatsapp-image-2025-07-19-at-14.27.27.jpeg
     caption: Jump
 main:
   title: Our approach
