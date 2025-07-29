@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeamLayout.astro
 title: CaraGals Ladies
-featuredImage: /images/2717-korr-v1.jpg
+featuredImage: /images/team-caragals.jpg
 introduction:
   intro-title: Lorem ipsum
   intro-text: >
