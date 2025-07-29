@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeamLayout.astro
 title: CaraGals Ladies
-featuredImage: /images/team-caragals.jpg
+featuredImage: /images/caracals-damen-hero-korr.jpg
 introduction:
   intro-title: Lorem ipsum
   intro-text: >
@@ -12,7 +12,7 @@ introduction:
     molestias delectus, blanditiis, ipsam quibusdam nesciunt itaque deserunt.
     Nulla.
 gallery:
-  - image: gild-jump.webp
+  - image: /images/2747.jpg
     caption: Jump
   - image: gild-jump.webp
     caption: Jump
