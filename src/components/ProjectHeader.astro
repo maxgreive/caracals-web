@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import { getImageFromFrontmatter } from '../utils/getImage.ts';
 const { frontmatter } = Astro.props;
 const containerClasses = Astro.props.containerClasses || [];
-const featuredImage = frontmatter.featuredImage ? getImageFromFrontmatter(frontmatter.featuredImage) : null;
+const featuredImage = getImageFromFrontmatter(frontmatter.featuredImage);
 ---
 <section id="home" class:list={["sticky", "top-0", "flex", "min-h-[60vh]", "items-center", "bg-gradient-to-b", "from-black/10", "via-black/20", "to-black", "media-h:min-h-[60vh]", "xl:min-h-100", "media-h:xl:min-h-100", ...containerClasses]}>
     {featuredImage && (
@@ -11,9 +11,9 @@ const featuredImage = frontmatter.featuredImage ? getImageFromFrontmatter(frontm
             src={ featuredImage }
             alt={ frontmatter.title || "Caracals Wuppertal" }
             layout="constrained"
-            width="1500"
+            width={ featuredImage.width }
             position="top"
-            height="750"
+            height={ featuredImage.height }
             data-rellax-speed="3"
             data-rellax-xs-speed="2"
             data-rellax-mobile-speed="2"

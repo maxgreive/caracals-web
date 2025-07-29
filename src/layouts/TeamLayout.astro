@@ -16,7 +16,7 @@ const maxWidthClasses = ["max-w-screen-2xl", "mx-auto"]
     {frontmatter.title && frontmatter.featuredImage && <ProjectHeader {frontmatter} containerClasses={maxWidthClasses} />}
     {frontmatter.introduction && <Introduction {frontmatter} />}
     {frontmatter.gallery && <Overview {frontmatter} />}
-    {frontmatter.body && <Approach {frontmatter} />}
+    {frontmatter.main && <Approach {frontmatter} />}
     <CallToAction {frontmatter} containerClasses={maxWidthClasses} />
     {frontmatter.nextTeam && <NextTeam {frontmatter} />}
     <Footer containerClasses={["z-10", "pt-8"]} />

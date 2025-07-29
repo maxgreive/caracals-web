@@ -14,7 +14,7 @@ gallery:
     caption: Jump
   - image: gild-jump.webp
     caption: Jump
-body:
+main:
   title: Our approach
   text: >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni a deserunt recusandae ducimus tempore porro repudiandae laboriosam nisi ut, dolorem, quam quidem quae qui impedit molestiae labore ratione earum!
