@@ -1,5 +1,5 @@
 export function getImageFromFrontmatter(filename: string) {
-  if (!filename) return null;
+  if (!filename) throw new Error('No file provided');
 
   const images = import.meta.glob('../assets/images/*', {
     eager: true, import: 'default'
