@@ -1,11 +1,10 @@
 ---
 import MainLayout from "./MainLayout.astro";
 import ProjectHeader from "../components/ProjectHeader.astro";
-const {frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <MainLayout>
-  <ProjectHeader frontmatter={frontmatter} />
-
+  {frontmatter.featuredImage && <ProjectHeader frontmatter={frontmatter} />}
   <slot />
 </MainLayout>
