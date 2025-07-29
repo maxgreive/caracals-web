@@ -14,7 +14,7 @@ introduction:
 gallery:
   - image: /images/2747.jpg
     caption: Jump
-  - image: gild-jump.webp
+  - image: /images/bildschirmfoto-2025-07-29-um-18.39.25.png
     caption: Jump
   - image: /images/whatsapp-image-2025-07-19-at-14.27.27.jpeg
     caption: Jump
