@@ -12,11 +12,11 @@ introduction:
     molestias delectus, blanditiis, ipsam quibusdam nesciunt itaque deserunt.
     Nulla.
 gallery:
-  - image: gild-jump.webp
+  - image: /images/2604.jpg
     caption: Jump
-  - image: gild-jump.webp
+  - image: /images/2547.jpg
     caption: Jump
-  - image: gild-jump.webp
+  - image: /images/2523.jpg
     caption: Jump
 main:
   title: Our approach
