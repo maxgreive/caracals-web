@@ -18,7 +18,7 @@ teams:
     image: /images/2245-korr2.jpg
 about:
   title: About us
-  image: about-us.jpg
+  image: /images/caracals-trainingslager-teamfoto-v1.jpg
   text: Minima iure saepe necessitatibus ipsa voluptatibus, minus voluptatem in
     facere maxime quae repellendus nisi inventore libero impedit eligendi,
     accusantium consequuntur consectetur quidem?
