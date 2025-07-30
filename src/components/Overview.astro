@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { getImageFromFrontmatter } from "../utils/getImage.ts";
 const { frontmatter } = Astro.props;
 
-const galleryImages = frontmatter.gallery.map(image => ({
+const galleryImages = frontmatter.gallery.map((image: { image: string; }) => ({
     ...image,
     image: getImageFromFrontmatter(image.image)
 }));

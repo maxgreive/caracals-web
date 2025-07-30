@@ -7,9 +7,9 @@ import favicon from "/public/favicon.svg";
 const year = new Date().getFullYear();
 const { containerClasses } = Astro.props;
 const data = await getEntry("data", "footer");
-const frontmatter = data.data;
+const frontmatter = data?.data;
 
-const instagramPosts = frontmatter.instagram.map(post => ({
+const instagramPosts = frontmatter?.instagram?.map(post => ({
   ...post,
   image: getImageFromFrontmatter(post.image)
 }));
@@ -24,9 +24,9 @@ const instagramPosts = frontmatter.instagram.map(post => ({
           </div>
           <div class="mt-12 grid grid-cols-2 md:grid-cols-4 md:mt-16 lg:mt-24">
             {instagramPosts?.map(item => (
-                <a href={item.url} target="_blank" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
+                <a href={item?.url} target="_blank" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
                     <span class="sr-only">{item?.title}</span>
-                    <Image class="transition duration-500" src={item.image} layout="constrained" alt={item?.title} width="1333" height="1333" />
+                    <Image class="transition duration-500" src={item?.image} layout="constrained" alt={item.title ?? 'Instagram-Beitrag'} width={item?.image?.width} height={item?.image?.height} />
                 </a>
             ))}
           </div>

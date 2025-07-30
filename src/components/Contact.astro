@@ -46,9 +46,9 @@ const { frontmatter } = Astro.props;
           <div class="mt-16">
             <h3 class="text-xs font-light uppercase tracking-widest text-white">Check this</h3>
             <ul class="relative z-20 mt-4 space-y-2 font-light text-white">
-              {frontmatter.links.map((link, i) => (
+              {frontmatter.links.map((link: { url: string | URL; label: unknown; }, i: number) => (
                 <li>
-                  <a href={link.url} target="_blank">{(i + 1).toString().padStart(3, "0")} ------ {link.label}</a>
+                  <a href={ link?.url } target="_blank">{(i + 1).toString().padStart(3, "0")} ------ { link?.label }</a>
                 </li>
               ))}
             </ul>
