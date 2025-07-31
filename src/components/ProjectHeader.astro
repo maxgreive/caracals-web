@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import { getImageFromFrontmatter } from '../utils/getImage.ts';
 const { frontmatter } = Astro.props;
 const containerClasses = Astro.props.containerClasses || [];
-const featuredImage = getImageFromFrontmatter(frontmatter.featuredImage);
+const featuredImage = frontmatter?.featuredImage ? getImageFromFrontmatter(frontmatter.featuredImage) : null;
 ---
 <section id="home" class:list={["sticky", "top-0", "flex", "min-h-[60vh]", "items-center", "bg-gradient-to-b", "from-black/10", "via-black/20", "to-black", "media-h:min-h-[60vh]", "xl:min-h-100", "media-h:xl:min-h-100", ...containerClasses]}>
     {featuredImage && (

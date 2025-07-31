@@ -2,9 +2,10 @@
 import MainLayout from "./MainLayout.astro";
 import ProjectHeader from "../components/ProjectHeader.astro";
 const { frontmatter } = Astro.props;
+const maxWidthClasses = ["max-w-screen-2xl", "mx-auto"];
 ---
 
 <MainLayout>
-  {frontmatter.featuredImage && <ProjectHeader frontmatter={frontmatter} />}
+  <ProjectHeader { frontmatter } containerClasses={maxWidthClasses} />
   <slot />
 </MainLayout>
