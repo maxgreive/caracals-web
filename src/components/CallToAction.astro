@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { getImageFromFrontmatter } from "../utils/getImage";
 const { frontmatter, containerClasses } = Astro.props;
+import trainingImage from '../assets/images/training.jpg';
 const galleryImages = frontmatter.gallery.map((image: { image: string; }) => ({
   ...image,
   image: getImageFromFrontmatter(image.image)
@@ -11,24 +12,24 @@ const galleryImages = frontmatter.gallery.map((image: { image: string; }) => ({
     <div class="space-y-3 md:space-y-6 xl:px-6">
         {
             galleryImages && galleryImages[2] &&
-            <Image src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width="2000" height="1334" layout="constrained" loading="lazy" />
+            <Image src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width={ galleryImages?.[2]?.width } height={ galleryImages?.[2]?.height } layout="constrained" loading="lazy" />
         }
         <div class="relative">
-            <div class="absolute inset-0 z-10 m-auto hidden lg:h-max lg:w-max lg:-translate-y-56 xl:block">
+            <div class="absolute inset-0 z-10 m-auto lg:h-max lg:w-max lg:-translate-y-56">
                 <div class="mx-auto max-w-7xl px-6 lg:-translate-y-48 lg:px-12 xl:px-6 2xl:px-0">
-                    <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" class="rellax -mt-48">
+                    <div data-rellax-speed="-2" data-rellax-xs-speed="1" data-rellax-mobile-speed="1" class="rellax mt-48">
                         <div class="flex flex-wrap items-center gap-6">
-                            <h2 class="text-7xl font-bold text-white sm:text-8xl xl:text-9xl">Call To Action</h2>
+                            <h2 class="text-shadow-lg font-bold text-white text-4xl lg:text-7xl xl:text-9xl">Sei dabei!</h2>
                             <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">03</span>
                         </div>
-                        <div class="mt-12 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:w-2/5 xl:leading-normal">
-                            <p>Nimm am Training teil</p>
-                            <a href="/training" class="mt-12 inline-block rounded-full bg-black px-6 py-3 text-base font-semibold text-white transition duration-300 hover:bg-white hover:text-black">Let's do it</a>
+                        <div class="mt-12 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:w-3/5 xl:leading-normal">
+                            <p class="text-shadow-lg">Das Training ist für jede/n was</p>
+                            <a href="/training" class="mt-12 inline-block rounded-full bg-black px-6 py-3 text-base font-semibold text-white transition duration-300 hover:bg-white hover:text-black">Termine checken</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <Image class="h-full w-full object-cover" src="/images/gild-cover3.webp" alt="cover" width="1800" height="1200" />
+            <Image class="h-full w-full object-cover" src={ trainingImage } alt="cover" width={ trainingImage.width } height={ trainingImage.height } />
         </div>
     </div>
 </section>

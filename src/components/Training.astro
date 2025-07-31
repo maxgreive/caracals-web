@@ -1,3 +1,9 @@
+---
+import { getEntry } from "astro:content";
+
+const { frontmatter } = Astro.props;
+const data = getEntry("pages", "training");
+---
 <section id="training" class="relative bg-black pb-20 pt-32 md:pb-0 lg:pb-0 xl:pt-96">
   <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
     <div class="flex flex-wrap items-center gap-6">
@@ -5,7 +11,7 @@
       <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">03 Dates</span>
     </div>
     <div class="mt-24">
-      <div class="">
+      <div>
         <div class="grid gap-12 sm:grid-cols-2 xl:grid-cols-3">
           <div>
             <div class="group border-b border-white/30 pb-8">
