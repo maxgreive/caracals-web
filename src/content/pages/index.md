@@ -1,8 +1,8 @@
 ---
-title: Caracals Wuppertal — Ultimate Frisbee
+title: Ein Team wie kein anderes.
 heroImage: /images/2150-korr.jpg
-intro: "Ein Team wie kein anderes: Die Caracals Wuppertal liefern feinsten
-  Scheibensport und energische Leidenschaft seit 2008."
+intro: Die Caracals Wuppertal liefern feinsten Scheibensport und energische
+  Leidenschaft seit 2008.
 teams:
   - name: Caracals Open
     handle: open
