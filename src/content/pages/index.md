@@ -1,5 +1,5 @@
 ---
-title: Ein Team wie kein anderes.
+title: Die Caracals – ein Team wie kein anderes.
 heroImage: /images/2150-korr.jpg
 intro: Die Caracals Wuppertal liefern feinsten Scheibensport und energische
   Leidenschaft seit 2008.
