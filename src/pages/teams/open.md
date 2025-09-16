@@ -5,26 +5,25 @@ featuredImage: /images/caracals-open-hero.jpg
 introduction:
   intro-title: Ambitioniert und gut gelaunt!
   intro-text: >-
-    Die Open Division zeichnet sich dadurch aus, dass jeder mitspielen kann. Bei
-    uns
+    Die Open Division zeichnet sich dadurch aus, dass alle mitspielen können.
+    Bei uns gehört die Mehrheit zu den sich als männlich identifizierenden
+    Spielern (MMP´s).\
 
-    gehört die Mehrheit zu den sich als männlich identifizierenden Spielern (MMP´s).
-
+    \
 
     Wir trainieren zweimal die Woche. Im Sommer beide Tage auf Rasen. Im Winter
 
-    auch einen Tag in der Halle. Das Training findet zusammen mit dem Mixed und Flinta-Team statt.
+    auch einen Tag in der Halle. Das Training findet zusammen mit dem Mixed und Flinta-Team statt.\
 
+    \
 
-    Bei den Indoor-Meisterschaften sind wir in diesem Jahr in der 2. Liga und der
+    Bei den Indoor-Meisterschaften sind wir in diesem Jahr in der 2. Liga und der 1. Liga angetreten. \
 
-    5. Liga angetreten. 
+    \
 
+    Bei den Outdoor-Meisterschaften haben wir dieses Jahr in 3. Liga gespielt.\
 
-    Bei den Outdoor-Meisterschaften haben wir dieses Jahr in 3. Liga
-
-    gespielt.
-
+    \
 
     Darüber hinaus trifft man uns auch immermal wieder auf Fun-Turnieren.
 gallery:
