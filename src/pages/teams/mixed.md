@@ -5,8 +5,8 @@ featuredImage: /images/caracals-mixed-hero.jpg
 introduction:
   intro-title: Vielfalt wirft weiter!
   intro-text: >-
-    
-    Ultimate Frisbee ist eine der wenigen Sportarten mit Mixed-Wettbewerben!
+    Ultimate Frisbee ist eine der wenigen Team-Sportarten mit
+    Mixed-Wettbewerben!
 
 
     Beim Mixed spielen FMP´s und MMP´s (Female und Male Matching Players) in ausgeglichenem Verhältnis zusammen.
