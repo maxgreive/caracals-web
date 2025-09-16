@@ -29,17 +29,14 @@ gallery:
 main:
   title: Das »W« in Caracals …
   text: >-
-    … steht nicht nur für Wuppertal.\
+    … steht nicht nur für Wuppertal.
 
-    \
 
-    Das »Wir« wird bei uns gelebt. Seit 2008 verstehen wir uns als Team, das jede Herausforderung annimmt und mit großem Anspruch und viel Herz spielt.\
+    Das »Wir« wird bei uns gelebt. Seit 2008 verstehen wir uns als Team, das jede Herausforderung annimmt. Wir entwickeln unser Game mit großem Anspruch ständig weiter um das nächste Level zu erreichen.
 
-    \
 
-    Wir sind aber auch eine starke Gemeinschaft, die über die Jahre immer größer geworden ist. Die Vielfalt der Menschen, die unter der Flagge der Caracals zusammenkommt ist wunderbar vielfältig und offen. Hier sind echte Freundschaften entstanden, es wurden Ehen geschlossen, und auch einige Kinder sind aus dieser Verbindungen hervorgegangen.\
+    Wir sind aber auch eine starke Gemeinschaft, die über die Jahre immer größer geworden ist. Die Vielfalt der Menschen, die unter der Flagge der Caracals zusammenkommt ist wunderbar vielfältig und offen. Hier sind echte Freundschaften entstanden, es wurden Ehen geschlossen, und auch einige Kinder sind aus dieser Verbindungen hervorgegangen.
 
-    \
 
     Die Geschichte der Caracals ist noch lange nicht zu Ende erzählt – beginnt das nächste Kapitel vielleicht mit Dir?
 nextTeam:
