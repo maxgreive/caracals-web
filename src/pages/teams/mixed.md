@@ -27,14 +27,18 @@ gallery:
   - image: /images/444b2ad5-fa26-4dd3-afc1-861878067436.jpg
     caption: Jump
 main:
-  title: Our approach
-  text: >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni a
-    deserunt recusandae ducimus tempore porro repudiandae laboriosam nisi ut,
-    dolorem, quam quidem quae qui impedit molestiae labore ratione earum!
-    Accusantium quia sed modi porro alias illo odit officia, est quas unde quod
-    molestias delectus, blanditiis, ipsam quibusdam nesciunt itaque deserunt.
-    Nulla.
+  title: Das »W« in Caracals …
+  text: >-
+    … steht nicht nur für Wuppertal.
+
+
+    Das »Wir« wird bei uns gelebt. Seit 2008 verstehen wir uns als Team, das jede Herausforderung annimmt und mit großem Anspruch und viel Herz spielt.
+
+
+    Wir sind aber auch eine starke Gemeinschaft, die über die Jahre immer größer geworden ist. Die Vielfalt der Menschen, die unter der Flagge der Caracals zusammenkommt ist wunderbar vielfältig und offen. Hier sind echte Freundschaften entstanden, es wurden Ehen geschlossen, und auch einige Kinder sind aus dieser Verbindungen hervorgegangen.
+
+
+    Die Geschichte der Caracals ist noch lange nicht zu Ende erzählt – beginnt das nächste Kapitel vielleicht mit Dir?
 nextTeam:
   handle: open
   title: Caracals Open
