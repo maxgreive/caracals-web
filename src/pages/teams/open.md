@@ -7,9 +7,9 @@ introduction:
   intro-text: >-
     Die Open Division zeichnet sich dadurch aus, dass alle mitspielen können.
     Bei uns gehört die Mehrheit zu den sich als männlich identifizierenden
-    Spielern (MMP´s).\
+    Spielern (MMP´s).
 
-    \
+    <br>
 
     Wir trainieren zweimal die Woche. Im Sommer beide Tage auf Rasen. Im Winter
 
