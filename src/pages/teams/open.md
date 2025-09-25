@@ -5,27 +5,22 @@ featuredImage: /images/caracals-open-hero.jpg
 introduction:
   intro-title: Ambitioniert und gut gelaunt!
   intro-text: >-
-    Die Open Division zeichnet sich dadurch aus, dass alle mitspielen können.
-    Bei uns gehört die Mehrheit zu den sich als männlich identifizierenden
-    Spielern (MMP´s).
+    Lust auf anspruchsvolles Ultimate Frisbee? Wir auch!\
 
-    <br>
 
-    Wir trainieren zweimal die Woche. Im Sommer beide Tage auf Rasen. Im Winter
-
-    auch einen Tag in der Halle. Das Training findet zusammen mit dem Mixed und Flinta-Team statt.\
+    Unsere Herren-Mannschaft trainiert zweimal die Woche. Im Sommer an beiden Tagen auf Rasen – im Winter auch an einem Termin in der Halle. Das Training findet zusammen mit dem Mixed und Flinta-Team statt.\
 
     \
 
-    Bei den Indoor-Meisterschaften sind wir in diesem Jahr in der 2. Liga und der 1. Liga angetreten. \
+    Bei den Indoor-Meisterschaften sind wir zuletzt in der 2. Liga und der 1. Liga angetreten. \
 
     \
 
-    Bei den Outdoor-Meisterschaften haben wir dieses Jahr in 3. Liga gespielt.\
+    Bei den Outdoor-Meisterschaften haben wir dieses Jahr in Liga 3 gespielt.\
 
     \
 
-    Darüber hinaus trifft man uns auch immermal wieder auf Fun-Turnieren.
+    Darüber hinaus trifft man uns auch immer wieder auf Fun-Turnieren in Deutschland und Europa …
 gallery:
   - image: /images/2645-korr.jpg
     caption: Jump
