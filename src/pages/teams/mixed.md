@@ -12,7 +12,7 @@ introduction:
     Beim Mixed spielen FMP´s und MMP´s (Female und Male Matching Players) in ausgeglichenem Verhältnis zusammen.
 
 
-    Wir trainieren zweimal in der Woche. Im Sommer an beiden Tagen auf dem Rasen. Im Winter auch an einem Termin in der Halle. Das Training findet zusammen mit dem Open- und Flinta-Team statt.\
+    Wir trainieren zweimal in der Woche. Im Sommer an beiden Tagen auf dem Rasen. Im Winter auch an einem Termin in der Halle. Das Training findet zusammen mit dem Open- und Flinta-Team statt.
 
 
     Unser Mixed-Team spielt sowohl bei den Indoor- als auch den Outdoor-Meisterschaften in der 3. Liga.
