@@ -20,9 +20,9 @@ about:
   title: About us
   image: /images/caracals-trainingslager-teamfoto-v1.jpg
   text: >-
-    Eine Raubkatze im Wappen, unseren Lieblingssport im Herzen und offene Arme
-    für alle, die Bock haben, mit uns diesen besonderen Sport zu erleben: Wir
-    sind die Caracals Wuppertal! \
+    Eine Raubkatze im Wappen, Ultimate Frisbee im Herzen und offene Arme für
+    alle, die Bock haben, mit uns diesen besonderen Sport zu erleben: Wir sind
+    die Caracals Wuppertal! \
 
     \
 
