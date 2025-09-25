@@ -19,9 +19,14 @@ teams:
 about:
   title: About us
   image: /images/caracals-trainingslager-teamfoto-v1.jpg
-  text: Minima iure saepe necessitatibus ipsa voluptatibus, minus voluptatem in
-    facere maxime quae repellendus nisi inventore libero impedit eligendi,
-    accusantium consequuntur consectetur quidem?
+  text: >-
+    Eine Raubkatze im Wappen, unseren Lieblingssport im Herzen und offene Arme
+    für alle, die Bock haben, mit uns diesen besonderen Sport zu erleben: Wir
+    sind die Caracals Wuppertal! \
+
+    \
+
+    … und die Carambas. Und CaraGals. Und Mambas! Manche auch Slacaracs … oder Caramellos … am besten findest Du es selbst heraus und lernst uns kennen!
 links:
   - label: Instagram
     url: https://www.instagram.com/caracals.wup/
