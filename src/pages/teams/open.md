@@ -12,7 +12,7 @@ introduction:
 
     \
 
-    Bei den Indoor-Meisterschaften sind wir zuletzt in der 2. Liga und der 1. Liga angetreten. \
+    Bei den Indoor-Meisterschaften sind wir zuletzt in der 2. Liga und der 5. Liga angetreten. \
 
     \
 
