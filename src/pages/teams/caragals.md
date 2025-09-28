@@ -13,7 +13,7 @@ introduction:
 
     \
 
-    Seit 202X treten unsere FMP´s als eigenständiges Team bei Wettbewerben an.\
+    Seit 2023 treten unsere FMP´s als eigenständiges Team bei Wettbewerben an.\
 
     \
 
