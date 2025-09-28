@@ -21,7 +21,7 @@ introduction:
 
     \
 
-    Besonders schön war hierbei, dass der Aufstieg gemeinsam mit Spielerinnen aus unserem Jugend-Team »Carambas« erreicht wurde.\
+    Besonders schön war hierbei, dass der Aufstieg gemeinsam mit Spielerinnen aus unserem Jugend-Team »Caramba« erreicht wurde.\
 
     \
 
