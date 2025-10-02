@@ -15,17 +15,15 @@ const galleryImages = frontmatter.gallery.map((image: { image: string; }) => ({
             <Image src={ galleryImages?.[2]?.image } alt={galleryImages?.[2]?.caption } width={ galleryImages?.[2]?.width } height={ galleryImages?.[2]?.height } layout="constrained" loading="lazy" />
         }
         <div class="relative">
-            <div class="absolute inset-0 z-10 m-auto lg:h-max lg:w-max lg:-translate-y-56">
-                <div class="mx-auto max-w-7xl px-6 lg:-translate-y-48 lg:px-12 xl:px-6 2xl:px-0">
-                    <div data-rellax-speed="-2" data-rellax-xs-speed="1" data-rellax-mobile-speed="1" class="rellax mt-48">
-                        <div class="flex flex-wrap items-center gap-6">
-                            <h2 class="text-shadow-lg font-bold text-white text-4xl lg:text-7xl xl:text-9xl">Sei dabei!</h2>
-                            <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">03</span>
-                        </div>
-                        <div class="mt-12 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:w-3/5 xl:leading-normal">
-                            <p class="text-shadow-lg">Das Training ist für jede/n was</p>
-                            <a href="/training" class="mt-12 inline-block rounded-full bg-black px-6 py-3 text-base font-semibold text-white transition duration-300 hover:bg-white hover:text-black">Termine checken</a>
-                        </div>
+            <div class="absolute flex inset-0 z-10 m-auto h-max w-max">
+                <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
+                    <div class="flex flex-wrap items-center gap-6">
+                        <h2 class="text-shadow-lg font-bold text-white text-4xl lg:text-7xl xl:text-9xl">Sei dabei!</h2>
+                        <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">03</span>
+                    </div>
+                    <div class="mt-12 ml-auto text-lg font-light text-white">
+                        <p class="text-shadow-lg">Das Training ist für jede/n was</p>
+                        <a href="/training" class="mt-12 inline-block rounded-full bg-black px-6 py-3 text-base font-semibold text-white transition duration-300 hover:bg-white hover:text-black">Termine checken</a>
                     </div>
                 </div>
             </div>

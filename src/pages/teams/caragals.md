@@ -5,25 +5,17 @@ featuredImage: /images/caracals-damen-hero-korr.jpg
 introduction:
   intro-title: Cat Queens
   intro-text: >-
-    Die CaraGals sind unser Flinta*-Team. \
+    Die CaraGals sind unser Flinta*-Team.
 
-    \
 
-    Wir trainieren zweimal in der Woche. Im Sommer an beiden Tage auf dem Rasen. Im Winter auch an einem Termin in der Halle. Das Training findet gemeinsam mit dem Open- und Mixed-Team statt.\
+    Wir trainieren zweimal in der Woche. Im Sommer an beiden Tage auf dem Rasen. Im Winter auch an einem Termin in der Halle. Das Training findet gemeinsam mit dem Open- und Mixed-Team statt.
 
-    \
 
-    Seit 2023 treten unsere FMP´s als eigenständiges Team bei Wettbewerben an.\
+    Seit 2023 treten unsere FMP´s als eigenständiges Team bei Wettbewerben an. Mit dem Auftstieg in die 2. Indoor-Liga konnte 2025 der erste große Erfolg gefeiert werden.
 
-    \
 
-    Mit dem Auftstieg in die 2. Indoor-Liga konnte 2025 der erste große Erfolg gefeiert werden.\
+    Besonders schön war hierbei, dass der Aufstieg gemeinsam mit Spielerinnen aus unserem Jugend-Team »Caramba« erreicht wurde.
 
-    \
-
-    Besonders schön war hierbei, dass der Aufstieg gemeinsam mit Spielerinnen aus unserem Jugend-Team »Caramba« erreicht wurde.\
-
-    \
 
     Bei den Outdoor-Meisterschaften treten die CaraGals regelmäßig als »Katzenfamilie« zusammen mit den Frauen von Düsseldorf Ultimate an. Aktuell spielen wir dort in der 2. Liga.
 gallery:

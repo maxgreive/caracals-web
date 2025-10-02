@@ -1,4 +1,6 @@
 ---
+import MarkdownIt from "markdown-it";
+const md = new MarkdownIt();
 const { frontmatter } = Astro.props;
 ---
 
@@ -26,9 +28,8 @@ const { frontmatter } = Astro.props;
 
                 <div
                     class="mt-12 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:mt-0 lg:w-1/2 xl:leading-normal"
-                >
-                    {frontmatter.introduction["intro-text"]}
-                </div>
+                    set:html={md.render(frontmatter.introduction["intro-text"])}
+                />
             </div>
         </div>
     </div>

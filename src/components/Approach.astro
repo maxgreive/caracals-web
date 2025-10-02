@@ -1,4 +1,6 @@
 ---
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt();
 const { frontmatter } = Astro.props;
 ---
 <section id="approach" class="relative z-10 bg-black pb-20 pt-20 md:sticky md:top-12">
@@ -15,9 +17,8 @@ const { frontmatter } = Astro.props;
                 }
                 {
                     frontmatter.main.text && (
-                        <div class="mt-24 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:w-1/2 xl:leading-normal">
-                            { frontmatter.main.text }
-                        </div>
+                        <div class="mt-24 ml-auto text-lg font-light text-white sm:text-2xl md:w-2/3 lg:w-1/2 xl:leading-normal"
+                            set:html={ md.render(frontmatter.main.text) } />
                     )
                 }
             </div>

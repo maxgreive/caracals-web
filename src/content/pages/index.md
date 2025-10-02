@@ -22,9 +22,8 @@ about:
   text: >-
     Eine Raubkatze im Wappen, Ultimate Frisbee im Herzen und offene Arme für
     alle, die Bock haben, mit uns diesen besonderen Sport zu erleben: Wir sind
-    die Caracals Wuppertal! \
+    die Caracals Wuppertal!
 
-    \
 
     … und die Carambas. Und CaraGals. Und Mambas! Manche auch Slacaracs … oder Caramellos … am besten findest Du es selbst heraus und lernst uns kennen!
 links:
