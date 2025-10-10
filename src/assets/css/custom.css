@@ -1,3 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  h2 {
+    @apply text-2xl font-bold text-white xl:text-4xl my-12;
+  }
+
+  p {
+    @apply text-lg font-light text-white sm:text-xl xl:leading-normal
+  }
+
+  strong {
+    @apply font-bold
+  }
+}
+
 body {
   font-family: 'Jost';
 }
