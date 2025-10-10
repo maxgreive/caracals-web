@@ -24,3 +24,19 @@ body {
 p + p {
   margin-top: 1rem;
 }
+
+
+@layer utilities {
+  /* Toggle helpers to mirror `group-hover` behavior for touch devices */
+  .toggle-mt.is-open, .is-open .toggle-mt {
+    margin-top: 2rem /* matches group-hover:mt-8 (2rem) */;
+  }
+
+  .toggle-maxh-24.is-open, .is-open .toggle-maxh-24 {
+    max-height: 6rem; /* approx matches max-h-24 */
+  }
+
+  .toggle-maxh-48.is-open, .is-open .toggle-maxh-48 {
+    max-height: 12rem; /* approx matches max-h-48 */
+  }
+}
