@@ -6,25 +6,38 @@ import MainLayout from "../layouts/MainLayout.astro";
   <section
     class="min-h-screen flex flex-col items-center justify-center text-white"
   >
-    <label for="training-on"
-      ><input
-        type="radio"
-        id="training-on"
-        name="training"
-        class="mr-4 opacity-0"
-        value="TRUE"
-      />✅ Findet statt!</label
-    >
-    <label for="training-off"
-    class="mt-8"
-      ><input
-        type="radio"
-        id="training-off"
-        name="training"
-        class="mr-4 opacity-0"
-        value="FALSE"
-      />❌ Fällt aus!</label
-    >
+    <form id="training-form">
+      <div class="flex flex-col gap-8 items-center">
+        <label for="training-date">
+          <span class="">Datum und Zeit: </span>
+          <input
+            type="datetime-local"
+            name="datetime"
+            id="training-date"
+            class="mb-8 text-black"
+          />
+        </label>
+        <label for="training-on"
+          ><input
+            type="radio"
+            id="training-on"
+            name="training"
+            class="mr-4 opacity-0"
+            value="TRUE"
+          />✅ Findet statt!</label
+        >
+        <label for="training-off"
+          ><input
+            type="radio"
+            id="training-off"
+            name="training"
+            class="mr-4 opacity-0"
+            value="FALSE"
+          />❌ Fällt aus!</label
+        >
+        <button type="submit">Speichern</button>
+      </div>
+    </form>
   </section>
 </MainLayout>
 
@@ -32,23 +45,36 @@ import MainLayout from "../layouts/MainLayout.astro";
   document.addEventListener("DOMContentLoaded", function () {
     const dbEndpoint = "https://sheetdb.io/api/v1/xy859kixabhhl";
 
+    const form = document.querySelector("form#training-form");
+    const datetimeInput = document.getElementById(
+      "training-date",
+    ) as HTMLInputElement;
     const trainingOnRadio = document.getElementById(
       "training-on",
     ) as HTMLInputElement;
     const trainingOffRadio = document.getElementById(
       "training-off",
     ) as HTMLInputElement;
-    if (!trainingOnRadio || !trainingOffRadio) return;
+    if (!trainingOnRadio || !trainingOffRadio || !form || !datetimeInput)
+      return;
 
     fetch(dbEndpoint)
       .then((response) => response.json())
       .then((data) => {
         const status = data[0]?.status?.toLowerCase();
+        const datetime = data[0]?.datetime;
+
         if (status === "true") {
           trainingOnRadio.checked = true;
         } else if (status === "false") {
           trainingOffRadio.checked = true;
         }
+        const date = new Date(datetime);
+        const offset = date.getTimezoneOffset();
+        const localISOTime = new Date(date.getTime() - offset * 60000)
+          .toISOString()
+          .slice(0, 16);
+        datetimeInput.value = localISOTime || "";
         trainingOnRadio.classList.remove("opacity-0");
         trainingOffRadio.classList.remove("opacity-0");
       })
@@ -56,27 +82,44 @@ import MainLayout from "../layouts/MainLayout.astro";
         console.error("Error fetching training status:", error);
       });
 
-    [trainingOnRadio, trainingOffRadio].forEach((radio) => {
-      radio.addEventListener("change", function () {
-        console.log('radio.value:', radio.value)
-        fetch(dbEndpoint + "/id/config", {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({ status: radio.value }),
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      fetch(dbEndpoint + "/id/config", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ status: trainingOnRadio.checked ? "TRUE" : "FALSE" }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
         })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            window.alert("Status erfolgreich geändert!");
-          })
-          .catch((error) => {
-            console.error("Error updating training status:", error);
-          });
-      });
+        .catch((error) => {
+          console.error("Error updating training status:", error);
+        });
+
+      fetch(dbEndpoint + "/id/config", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ datetime: datetimeInput.value }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          window.alert("Training erfolgreich geändert!");
+        })
+        .catch((error) => {
+          console.error("Error updating training datetime:", error);
+        });
+      // Prevent actual form submission
+      return false;
     });
   });
 </script>

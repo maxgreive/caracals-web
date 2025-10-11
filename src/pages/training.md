@@ -28,7 +28,7 @@ Ab **29. Oktober** starten wir dann mit dem Hallentraining am Mittwoch:
 
 ## Status
 
-<span id="training-status">⌛ Lädt ...</span>
+<span id="training-status"><span data-date></span><span data-status>⌛ Lädt ...</span></span>
 
 ## Wichtig ⚠️
 
@@ -43,10 +43,20 @@ Bitte schaut vor jedem Training hier auf der Seite vorbei, um den aktuellen Stan
     fetch(dbEndpoint)
       .then(response => response.json())
       .then(data => {
+        if (data[0]?.datetime) trainingStatus.querySelector('[data-date]').textContent = new Intl.DateTimeFormat("de-DE", {
+          weekday: "short",
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: false,
+          timeZone: "Europe/Berlin",
+        }).format(new Date(data[0].datetime));
         if (data[0]?.status?.toLowerCase() === 'false') {
-          return trainingStatus.textContent = '❌ Fällt aus!'
+          return trainingStatus.querySelector('[data-status]').textContent = ' Uhr — ❌ Fällt aus!'
         }
-        return trainingStatus.textContent = '✅ Findet statt!'
+        return trainingStatus.querySelector('[data-status]').textContent = ' Uhr — ✅ Findet statt!'
       });
   }
 </script>
