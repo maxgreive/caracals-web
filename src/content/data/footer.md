@@ -20,7 +20,7 @@ links:
   - url: /training
     label: Training
   - url: /#about
-    label: About us
+    label: Über uns
   - url: /#contact
     label: Kontakt
 ---

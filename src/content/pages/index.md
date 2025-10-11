@@ -17,7 +17,7 @@ teams:
     handle: mixed
     image: /images/2245-korr2.jpg
 about:
-  title: About us
+  title: Über uns
   image: /images/caracals-trainingslager-teamfoto-v1.jpg
   text: >-
     Eine Raubkatze im Wappen, Ultimate Frisbee im Herzen und offene Arme für
