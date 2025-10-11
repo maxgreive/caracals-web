@@ -1,4 +1,5 @@
 ---
+const { noindex = false } = Astro.props;
 ---
 
 <head>
@@ -7,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caracals Wuppertal</title>
   <meta name="description" content="#1 Ultimate Team in Wuppertal" />
+  <meta name="robots" content={ noindex ? "noindex, nofollow" : "index, follow" } />
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="" />

@@ -1,0 +1,82 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout noindex={true}>
+  <section
+    class="min-h-screen flex flex-col items-center justify-center text-white"
+  >
+    <label for="training-on"
+      ><input
+        type="radio"
+        id="training-on"
+        name="training"
+        class="mr-4 opacity-0"
+        value="TRUE"
+      />✅ Findet statt!</label
+    >
+    <label for="training-off"
+    class="mt-8"
+      ><input
+        type="radio"
+        id="training-off"
+        name="training"
+        class="mr-4 opacity-0"
+        value="FALSE"
+      />❌ Fällt aus!</label
+    >
+  </section>
+</MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dbEndpoint = "https://sheetdb.io/api/v1/xy859kixabhhl";
+
+    const trainingOnRadio = document.getElementById(
+      "training-on",
+    ) as HTMLInputElement;
+    const trainingOffRadio = document.getElementById(
+      "training-off",
+    ) as HTMLInputElement;
+    if (!trainingOnRadio || !trainingOffRadio) return;
+
+    fetch(dbEndpoint)
+      .then((response) => response.json())
+      .then((data) => {
+        const status = data[0]?.status?.toLowerCase();
+        if (status === "true") {
+          trainingOnRadio.checked = true;
+        } else if (status === "false") {
+          trainingOffRadio.checked = true;
+        }
+        trainingOnRadio.classList.remove("opacity-0");
+        trainingOffRadio.classList.remove("opacity-0");
+      })
+      .catch((error) => {
+        console.error("Error fetching training status:", error);
+      });
+
+    [trainingOnRadio, trainingOffRadio].forEach((radio) => {
+      radio.addEventListener("change", function () {
+        console.log('radio.value:', radio.value)
+        fetch(dbEndpoint + "/id/config", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ status: radio.value }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            window.alert("Status erfolgreich geändert!");
+          })
+          .catch((error) => {
+            console.error("Error updating training status:", error);
+          });
+      });
+    });
+  });
+</script>
