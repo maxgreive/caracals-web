@@ -17,7 +17,7 @@ links:
     label: Home
   - url: /#teams
     label: Teams
-  - url: /#training
+  - url: /training
     label: Training
   - url: /#about
     label: About us
