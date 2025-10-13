@@ -62,7 +62,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       .then((response) => response.json())
       .then((data) => {
         const status = data[0]?.status?.toLowerCase();
-        const datetime = data[0]?.datetime;
+        const datetime = data[0]?.datetime.replace(/\u00A0/g, ' ').trim();
 
         if (status === "true") {
           trainingOnRadio.checked = true;

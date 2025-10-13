@@ -52,7 +52,7 @@ Bitte schaut vor jedem Training hier auf der Seite vorbei, um den aktuellen Stan
           minute: "numeric",
           hour12: false,
           timeZone: "Europe/Berlin",
-        }).format(new Date(data[0].datetime));
+        }).format(new Date(data[0].datetime.replace(/\u00A0/g, ' ').trim()));
         if (data[0]?.status?.toLowerCase() === 'false') {
           return trainingStatus.querySelector('[data-status]').textContent = ' Uhr — ❌ Fällt aus!'
         }
