@@ -1,0 +1,102 @@
+---
+import { getEntry } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const trainingEntry = await getEntry("pages", "training");
+
+if (!trainingEntry) {
+  throw new Error('Missing content entry "pages/training".');
+}
+
+const training = trainingEntry.data;
+
+if (!training.currentSeason || !training.seasons || !training.introVideoUrl || !training.statusTitle || !training.importantTitle || !training.importantNotice) {
+  throw new Error('Training content entry is missing required season fields.');
+}
+
+const currentSeason = training.currentSeason;
+const season = training.seasons[currentSeason];
+---
+
+<PageLayout frontmatter={{ title: training.title, featuredImage: training.featuredImage }}>
+  <h2>Was erwartet dich?</h2>
+  <div class="video-container">
+    <iframe
+      width="560"
+      height="315"
+      src={training.introVideoUrl}
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <h2>{season.title}</h2>
+
+  {season.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  {season.scheduleBlocks.map((block) => (
+    <div>
+      <p><strong>{block.title}:</strong></p>
+      {block.sessions.map((session) => (
+        <p>
+          <strong>{session.weekday}</strong>: {session.time}<br />
+          <a href={session.locationUrl} target="_blank" rel="noreferrer">{session.locationName}</a>
+          {session.addressLines?.map((line) => (
+            <>
+              <br />
+              {line}
+            </>
+          ))}
+        </p>
+      ))}
+    </div>
+  ))}
+
+  <div id="training-status-section" hidden>
+    <h2>{training.statusTitle}</h2>
+
+    <span id="training-status"><span data-date></span><span data-status>⌛ Lädt ...</span></span>
+  </div>
+
+  <h2>{training.importantTitle}</h2>
+
+  {training.importantNotice.map((paragraph) => <p>{paragraph}</p>)}
+
+  <script>
+    const trainingStatusSection = document.querySelector('#training-status-section');
+    const trainingStatus = document.querySelector('#training-status');
+
+    if (trainingStatusSection && trainingStatus) {
+      const dbEndpoint = "https://sheetdb.io/api/v1/xy859kixabhhl";
+      fetch(dbEndpoint)
+        .then(response => response.json())
+        .then(data => {
+          const rawDatetime = data[0]?.datetime?.replace(/\u00A0/g, ' ').trim();
+          const date = rawDatetime ? new Date(rawDatetime) : null;
+
+          if (!(date instanceof Date) || Number.isNaN(date.getTime()) || date.getTime() <= Date.now()) {
+            return;
+          }
+
+          trainingStatusSection.hidden = false;
+          trainingStatus.querySelector('[data-date]').textContent = new Intl.DateTimeFormat("de-DE", {
+            weekday: "short",
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            hour12: false,
+            timeZone: "Europe/Berlin",
+          }).format(date);
+          if (data[0]?.status?.toLowerCase() === 'false') {
+            return trainingStatus.querySelector('[data-status]').textContent = ' Uhr — ❌ Fällt aus!';
+          }
+          return trainingStatus.querySelector('[data-status]').textContent = ' Uhr — ✅ Findet statt!';
+        });
+    }
+  </script>
+</PageLayout>

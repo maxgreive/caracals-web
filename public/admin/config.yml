@@ -42,23 +42,64 @@ collections:
     label: Page
     files:
       - label: Training
-        file: src/pages/training.md
+        file: src/content/pages/training.md
         name: training
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Slug, name: slug, widget: string }
-          - { label: Content, name: body, widget: markdown }
-          - label: Events
-            name: events
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Intro Video URL, name: introVideoUrl, widget: string }
+          - { label: Current Season, name: currentSeason, widget: select, options: ["summer", "winter"] }
+          - { label: Status Title, name: statusTitle, widget: string }
+          - { label: Important Title, name: importantTitle, widget: string }
+          - label: Important Notice
+            name: importantNotice
             widget: list
+            field: { label: Paragraph, name: paragraph, widget: string }
+          - label: Seasons
+            name: seasons
+            widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Weekday, name: weekday, widget: select, options: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"] }
-              - { label: Time, name: time, widget: string }
-              - { label: Location, name: location, widget: select, options: ["Gesamtschule Barmen", "Am Freudenberg", "..."] }
-              - { label: Surface, name: surface, widget: select, options: ["Rasen", "Kunstrasen", "Halle", "Sand"] }
-              - { label: Description, name: description, widget: markdown }
-              - { label: Contact, name: contact, widget: string }
+              - label: Summer
+                name: summer
+                widget: object
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - label: Intro
+                    name: intro
+                    widget: list
+                    field: { label: Paragraph, name: paragraph, widget: string }
+                  - &schedule_blocks
+                    label: Schedule Blocks
+                    name: scheduleBlocks
+                    widget: list
+                    fields:
+                      - { label: Title, name: title, widget: string }
+                      - &sessions
+                        label: Sessions
+                        name: sessions
+                        widget: list
+                        fields:
+                          - { label: Weekday, name: weekday, widget: select, options: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"] }
+                          - { label: Time, name: time, widget: string }
+                          - { label: Location Name, name: locationName, widget: string }
+                          - { label: Location URL, name: locationUrl, widget: string }
+                          - label: Address Lines
+                            name: addressLines
+                            widget: list
+                            required: false
+                            field: { label: Address Line, name: addressLine, widget: string }
+              - label: Winter
+                name: winter
+                widget: object
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - label: Intro
+                    name: intro
+                    widget: list
+                    field: { label: Paragraph, name: paragraph, widget: string }
+                  - *schedule_blocks
   - name: content
     label: Content
     files:

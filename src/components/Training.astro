@@ -1,59 +1,66 @@
 ---
 import { getEntry } from "astro:content";
+import { getOrderedSeasons } from "../utils/training";
 
-const { frontmatter } = Astro.props;
-const data = getEntry("pages", "training");
+const data = await getEntry("pages", "training");
+
+if (!data) {
+  throw new Error('Missing content entry "pages/training".');
+}
+
+if (!data.data.currentSeason || !data.data.seasons) {
+  throw new Error('Training content entry is missing required season fields.');
+}
+
+const seasons = getOrderedSeasons(data.data);
 ---
 <section id="training" class="relative bg-black pb-20 pt-32 md:pb-24 lg:pb-24 xl:pt-24">
   <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
     <div class="flex flex-wrap items-center gap-6">
       <h2 class="text-7xl font-bold text-white xl:text-8xl">Sei dabei!</h2>
-      <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">03 Dates</span>
+      <span class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">
+        {data.data.currentSeason === "summer" ? "Saison: Sommer" : "Saison: Winter"}
+      </span>
     </div>
     <div class="mt-24">
       <div>
         <div class="grid gap-12 sm:grid-cols-2 xl:grid-cols-3">
-          <div>
-            <div class="group border-b border-white/30 pb-8 cursor-pointer" tabindex="0" aria-expanded="false">
-              <div class="flex flex-col gap-4 divide-y divide-white/30">
-                <span class="inline-block text-white/60">001</span>
-                <h3 class="bg-black pt-6 text-3xl text-white">Sommer Training</h3>
-              </div>
-              <div class="mt-0 overflow-hidden transition-all duration-500 group-hover:mt-8 toggle-mt">
-                <p class="max-h-0 font-light text-white/70 transition-all duration-500 group-hover:max-h-24 toggle-maxh-24 md:text-xl">
-                  Montag & Mittwoch, 19:00 h<br />
-                  <a href="https://maps.app.goo.gl/aT5ThUaytgMvgvkk9" target="_blank">
-                    Am Freudenberg 5<br />
-                    42119 Wuppertal
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="group border-b border-white/30 pb-8 cursor-pointer" tabindex="0" aria-expanded="false">
-              <div class="flex flex-col gap-4 divide-y divide-white/30">
-                <span class="inline-block text-white/60">002</span>
-                <h3 class="bg-black pt-6 text-3xl text-white">Winter Training</h3>
-              </div>
-              <div class="flex justify-between mt-0 overflow-hidden transition-all duration-500 group-hover:mt-8 toggle-mt">
-                <div class="max-h-0 font-light text-white/70 transition-all duration-500 group-hover:max-h-48 toggle-maxh-48 md:text-lg">
-                  Montag, 20:00 Uhr<br />
-                  <a href="https://maps.app.goo.gl/aT5ThUaytgMvgvkk9" target="_blank">
-                    Kunstrasen Outdoor<br />
-                    Am Freudenberg 5<br />
-                    42119 Wuppertal
-                  </a>
+          {seasons.map((season, index) => (
+            <div>
+              <div class="group cursor-pointer border-b border-white/30 pb-8" tabindex="0" aria-expanded="false">
+                <div class="flex flex-col gap-4 divide-y divide-white/30">
+                  <span class="inline-block text-white/60">
+                    {String(index + 1).padStart(3, "0")}
+                    {index === 0 ? " • Aktuell" : ""}
+                  </span>
+                  <h3 class="bg-black pt-6 text-3xl text-white">{season.label}</h3>
                 </div>
-                <div class="max-h-0 font-light text-white/70 transition-all duration-500 group-hover:max-h-48 toggle-maxh-48 md:text-lg">
-                  Mittwoch, 20:00 h<br />
-                  <a href="https://maps.app.goo.gl/pZnkCobq3tge9RTt9" target="_blank">Sporthalle GS Barmen<br />
-                  Unterdörnen 1<br />
-                  42283 Wuppertal</a>
+                <div class="mt-0 overflow-hidden transition-all duration-500 group-hover:mt-8 toggle-mt">
+                  <div class="max-h-0 space-y-6 font-light text-white/70 transition-all duration-500 group-hover:max-h-[32rem] toggle-maxh-48 md:text-lg">
+                    {season.scheduleBlocks.map((block) => (
+                      <div>
+                        <p class="mb-4 text-white/90">{block.title}</p>
+                        {block.sessions.map((session) => (
+                          <p class="mb-4 last:mb-0">
+                            {session.weekday}, {session.time}<br />
+                            <a href={session.locationUrl} target="_blank" rel="noreferrer">
+                              {session.locationName}
+                            </a>
+                            {session.addressLines?.map((line) => (
+                              <>
+                                <br />
+                                {line}
+                              </>
+                            ))}
+                          </p>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
           <div>
             <div class="group border-b border-white/30 pb-8 cursor-pointer" tabindex="0" aria-expanded="false">
               <div class="flex flex-col gap-4 divide-y divide-white/30">
