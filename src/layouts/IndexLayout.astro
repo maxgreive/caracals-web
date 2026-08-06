@@ -2,7 +2,11 @@
 import MainLayout from "./MainLayout.astro";
 import Footer from "../components/Footer.astro";
 ---
-<MainLayout>
+<MainLayout
+  title={Astro.props.frontmatter?.title}
+  description={Astro.props.frontmatter?.intro}
+  image={Astro.props.frontmatter?.heroImage}
+>
     <slot />
     <Footer containerClasses={["pt-32", "backdrop-opacity-0"]} />
 </MainLayout>

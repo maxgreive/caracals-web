@@ -8,10 +8,15 @@ import Contact from "../components/Contact.astro";
 import { getEntry } from "astro:content";
 
 const data = await getEntry("pages", "index");
-const frontmatter = data?.data;
+
+if (!data) {
+  throw new Error('Missing content entry "pages/index".');
+}
+
+const frontmatter = data.data;
 ---
 
-<IndexLayout>
+<IndexLayout frontmatter={frontmatter}>
   <Hero {frontmatter} />
   <Teams {frontmatter} />
   <Training {frontmatter} />

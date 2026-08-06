@@ -5,11 +5,38 @@ import "../assets/css/custom.css";
 ---
 
 <html lang="de" class="scroll-smooth">
-  <BaseHead noindex={ Astro.props.noindex } />
+  <BaseHead
+    title={Astro.props.title}
+    description={Astro.props.description}
+    image={Astro.props.image}
+    noindex={Astro.props.noindex}
+  />
   <body class="bg-black">
     <Header />
     <main class="background relative">
       <slot />
     </main>
   </body>
+  <script>
+    import Rellax from "rellax";
+
+    const initializeParallax = () => {
+      if (
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        !document.querySelector(".rellax")
+      ) {
+        return;
+      }
+
+      new Rellax(".rellax", {
+        breakpoints: [576, 768, 1201],
+      });
+    };
+
+    if (document.readyState === "complete") {
+      initializeParallax();
+    } else {
+      window.addEventListener("load", initializeParallax, { once: true });
+    }
+  </script>
 </html>

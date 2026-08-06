@@ -20,36 +20,46 @@ const trainingSeasonSchema = z.object({
   scheduleBlocks: z.array(trainingScheduleBlockSchema),
 });
 
-const pages = defineCollection({
-  schema: z.object({
+const linkSchema = z.object({
+  label: z.string(),
+  url: z.string().url(),
+});
+
+const teamSchema = z.object({
+  name: z.string(),
+  handle: z.string(),
+  image: z.string(),
+});
+
+const homePageSchema = z.object({
+  title: z.string(),
+  heroImage: z.string(),
+  intro: z.string(),
+  links: z.array(linkSchema),
+  about: z.object({
     title: z.string(),
-    featuredImage: z.string().optional(),
-    intro: z.string().optional(),
-    links: z.array(z.object({
-      label: z.string(),
-      url: z.string().url(),
-    })).optional(),
-    heroImage: z.string().optional(),
-    about: z.object({
-      title: z.string(),
-      image: z.string().optional(),
-      text: z.string().optional(),
-    }).optional(),
-    teams: z.array(z.object({
-      name: z.string(),
-      handle: z.string(),
-      image: z.string(),
-    })).optional(),
-    introVideoUrl: z.string().url().optional(),
-    currentSeason: z.enum(["summer", "winter"]).optional(),
-    statusTitle: z.string().optional(),
-    importantTitle: z.string().optional(),
-    importantNotice: z.array(z.string()).optional(),
-    seasons: z.object({
-      summer: trainingSeasonSchema,
-      winter: trainingSeasonSchema,
-    }).optional(),
+    image: z.string(),
+    text: z.string(),
   }),
+  teams: z.array(teamSchema).min(1),
+});
+
+const trainingPageSchema = z.object({
+  title: z.string(),
+  featuredImage: z.string(),
+  introVideoUrl: z.string().url(),
+  currentSeason: z.enum(["summer", "winter"]),
+  statusTitle: z.string(),
+  importantTitle: z.string(),
+  importantNotice: z.array(z.string()).min(1),
+  seasons: z.object({
+    summer: trainingSeasonSchema,
+    winter: trainingSeasonSchema,
+  }),
+});
+
+const pages = defineCollection({
+  schema: z.union([homePageSchema, trainingPageSchema]),
 });
 
 const data = defineCollection({

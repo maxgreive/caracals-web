@@ -12,12 +12,16 @@ const { frontmatter } = Astro.props;
 const maxWidthClasses = ["max-w-screen-2xl", "mx-auto"]
 ---
 
-<MainLayout>
+<MainLayout
+  title={frontmatter?.title}
+  description="Entdecke die Caracals-Teams in Wuppertal und finde dein Team."
+  image={frontmatter?.featuredImage}
+>
     {frontmatter.title && frontmatter.featuredImage && <ProjectHeader {frontmatter} containerClasses={maxWidthClasses} />}
     {frontmatter.introduction && <Introduction {frontmatter} />}
     {frontmatter.gallery && <Overview {frontmatter} />}
     {frontmatter.main && <Approach {frontmatter} />}
-    <CallToAction {frontmatter} containerClasses={maxWidthClasses} />
+    {frontmatter.gallery && <CallToAction {frontmatter} containerClasses={maxWidthClasses} />}
     {frontmatter.nextTeam && <NextTeam {frontmatter} />}
     <Footer containerClasses={["z-10", "pt-8"]} />
 </MainLayout>
