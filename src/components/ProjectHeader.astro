@@ -14,13 +14,10 @@ const featuredImage = frontmatter?.featuredImage ? getImageFromFrontmatter(front
             width={ featuredImage.width }
             position="top"
             height={ featuredImage.height }
-            data-rellax-speed="3"
-            data-rellax-xs-speed="2"
-            data-rellax-mobile-speed="2"
-            class="rellax absolute inset-0 h-full w-full object-cover"
+            class="absolute inset-0 h-full w-full object-cover"
         />
     )}
     <div class="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-12 xl:px-6 2xl:px-0">
-        <h1 data-rellax-speed="-1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" class="rellax text-center text-7xl font-black text-white sm:text-8xl lg:text-9xl xl:leading-tight">{frontmatter.title}</h1>
+        <h1 class="text-center text-7xl font-black text-white sm:text-8xl lg:text-9xl xl:leading-tight">{frontmatter.title}</h1>
     </div>
 </section>
