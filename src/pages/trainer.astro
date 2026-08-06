@@ -35,7 +35,8 @@ import MainLayout from "../layouts/MainLayout.astro";
             value="FALSE"
           />❌ Fällt aus!</label
         >
-        <button type="submit">Speichern</button>
+        <button type="submit" class="disabled:opacity-50" disabled>Speichern</button>
+        <p id="training-message" class="min-h-6 text-center" aria-live="polite"></p>
       </div>
     </form>
   </section>
@@ -55,71 +56,68 @@ import MainLayout from "../layouts/MainLayout.astro";
     const trainingOffRadio = document.getElementById(
       "training-off",
     ) as HTMLInputElement;
-    if (!trainingOnRadio || !trainingOffRadio || !form || !datetimeInput)
+    const submitButton = form?.querySelector("button[type=submit]") as HTMLButtonElement | null;
+    const message = document.getElementById("training-message");
+    if (!trainingOnRadio || !trainingOffRadio || !form || !datetimeInput || !submitButton)
       return;
 
     fetch(dbEndpoint)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error("Training status could not be loaded");
+        return response.json();
+      })
       .then((data) => {
         const status = data[0]?.status?.toLowerCase();
-        const datetime = data[0]?.datetime.replace(/\u00A0/g, ' ').trim();
+        const datetime = data[0]?.datetime?.replace(/\u00A0/g, " ").trim();
 
         if (status === "true") {
           trainingOnRadio.checked = true;
         } else if (status === "false") {
           trainingOffRadio.checked = true;
         }
-        const date = new Date(datetime);
-        const offset = date.getTimezoneOffset();
-        const localISOTime = new Date(date.getTime() - offset * 60000)
-          .toISOString()
-          .slice(0, 16);
-        datetimeInput.value = localISOTime || "";
+        if (datetime) {
+          const date = new Date(datetime);
+          if (!Number.isNaN(date.getTime())) {
+            const offset = date.getTimezoneOffset();
+            datetimeInput.value = new Date(date.getTime() - offset * 60000)
+              .toISOString()
+              .slice(0, 16);
+          }
+        }
         trainingOnRadio.classList.remove("opacity-0");
         trainingOffRadio.classList.remove("opacity-0");
+        submitButton.disabled = false;
       })
       .catch((error) => {
         console.error("Error fetching training status:", error);
+        if (message) message.textContent = "Status konnte nicht geladen werden.";
       });
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
-      fetch(dbEndpoint + "/id/config", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ status: trainingOnRadio.checked ? "TRUE" : "FALSE" }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-        })
-        .catch((error) => {
-          console.error("Error updating training status:", error);
-        });
+      submitButton.disabled = true;
+      if (message) message.textContent = "Speichere …";
 
-      fetch(dbEndpoint + "/id/config", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ datetime: datetimeInput.value }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          window.alert("Training erfolgreich geändert!");
-        })
-        .catch((error) => {
-          console.error("Error updating training datetime:", error);
+      try {
+        const response = await fetch(dbEndpoint + "/id/config", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            status: trainingOnRadio.checked ? "TRUE" : "FALSE",
+            datetime: datetimeInput.value,
+          }),
         });
-      // Prevent actual form submission
-      return false;
+        if (!response.ok) throw new Error("Training status could not be saved");
+        if (message) message.textContent = "Training erfolgreich geändert.";
+      } catch (error) {
+        console.error("Error updating training status:", error);
+        if (message) message.textContent = "Änderung konnte nicht gespeichert werden.";
+      } finally {
+        submitButton.disabled = false;
+      }
     });
   });
 </script>

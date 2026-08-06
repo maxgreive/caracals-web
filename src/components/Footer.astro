@@ -20,11 +20,11 @@ const instagramPosts = frontmatter?.instagram?.map(post => ({
       <div>
           <div class="flex flex-wrap items-center gap-6">
               <h2 class="text-3xl text-white xl:text-6xl">Instagram</h2>
-              <a href="https://instagram.com/caracals.wup" target="_blank" class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">@caracals.wup</a>
+              <a href="https://instagram.com/caracals.wup" target="_blank" rel="noopener noreferrer" class="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">@caracals.wup</a>
           </div>
           <div class="mt-12 grid grid-cols-2 md:grid-cols-4 md:mt-16 lg:mt-24">
             {instagramPosts?.map(item => (
-                <a href={item?.url} target="_blank" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
+                <a href={item?.url} target="_blank" rel="noopener noreferrer" class="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
                     <span class="sr-only">{item?.title}</span>
                     <Image class="transition duration-500" src={item?.image} layout="constrained" alt={item.title ?? 'Instagram-Beitrag'} width={item?.image?.width} height={item?.image?.height} />
                 </a>
@@ -48,7 +48,7 @@ const instagramPosts = frontmatter?.instagram?.map(post => ({
               </nav>
               <div class="flex flex-wrap justify-between gap-3">
                   <span class="text-sm text-white/50">&copy; Caracals 2008 - {year}</span>
-                  <span class="text-sm text-white/50">Built by <a href="https://x.com/maex2k" class="text-white">Max #16</a></span>
+                  <span class="text-sm text-white/50">Built by <a href="https://x.com/maex2k" target="_blank" rel="noopener noreferrer" class="text-white">Max #16</a></span>
               </div>
           </div>
       </div>

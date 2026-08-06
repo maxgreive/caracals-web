@@ -43,7 +43,7 @@ const season = training.seasons[currentSeason];
       {block.sessions.map((session) => (
         <p>
           <strong>{session.weekday}</strong>: {session.time}<br />
-          <a href={session.locationUrl} target="_blank" rel="noreferrer">{session.locationName}</a>
+          <a href={session.locationUrl} target="_blank" rel="noopener noreferrer">{session.locationName}</a>
           {session.addressLines?.map((line) => (
             <>
               <br />
