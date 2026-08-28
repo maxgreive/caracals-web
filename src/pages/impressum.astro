@@ -1,0 +1,50 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const frontmatter = {
+  title: "Impressum",
+};
+---
+
+<PageLayout {frontmatter}>
+  <div class="max-w-3xl space-y-12">
+    <section>
+      <h2>Angaben gemäß § 5 DDG und § 18 MStV</h2>
+      <p>
+        Die Caracals Wuppertal sind eine Abteilung des SSV Germania 1900 e.V.
+      </p>
+      <p>
+        SSV Germania 1900 e.V.<br />
+        Postfach 160104<br />
+        42342 Wuppertal
+      </p>
+    </section>
+
+    <section>
+      <h2>Vertretungsberechtigter Vorstand</h2>
+      <p>
+        1. Vorsitzender: Thomas Janssen<br />
+        Stellvertretende Vorsitzende: Monika Zillmann und Christian Ihmann<br />
+        Kassierer: Dirk Hofmann<br />
+        Geschäftsführer: Gerd Horn
+      </p>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a class="underline decoration-white/40 underline-offset-4 hover:decoration-white" href="mailto:hello@caracals.de">hello@caracals.de</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        Max Greive<br />
+        c/o SSV Germania 1900 e.V.<br />
+        Postfach 160104<br />
+        42342 Wuppertal
+      </p>
+    </section>
+  </div>
+</PageLayout>

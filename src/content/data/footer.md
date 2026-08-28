@@ -23,4 +23,6 @@ links:
     label: Über uns
   - url: /#contact
     label: Kontakt
+  - url: /impressum
+    label: Impressum
 ---
